@@ -15,6 +15,9 @@ sky = SubResource("Sky_j8job")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62w18"]
+albedo_color = Color(0.2970001, 0.26, 1, 1)
+
 [node name="World" type="Node3D" unique_id=2090731207]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=281333146]
@@ -24,10 +27,15 @@ environment = SubResource("Environment_3f78f")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1902772988]
+[node name="Ground" type="CSGBox3D" parent="." unique_id=1902772988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 use_collision = true
 size = Vector3(100, 0.5, 100)
 
 [node name="Car" parent="." unique_id=16548500 instance=ExtResource("1_62w18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+
+[node name="ReferenceBlock" type="CSGBox3D" parent="." unique_id=334611726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05973077, 0, 2.793522)
+use_collision = true
+material = SubResource("StandardMaterial3D_62w18")
