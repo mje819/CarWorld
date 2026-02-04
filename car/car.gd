@@ -17,9 +17,7 @@ func _physics_process(delta: float) -> void:
 	#print(self.position)
 	steering = move_toward(steering, Input.get_axis("turn_right","turn_left") * 0.9,delta)
 	
-	# Maybe only for testing
-	if Input.is_action_pressed("reset"):
-		get_tree().reload_current_scene()
+	
 	
 	camera_holder.global_position = global_position
 	camera_holder.rotation.y = rotation.y
