@@ -43,7 +43,6 @@ mesh = SubResource("CylinderMesh_33qfd")
 
 [node name="VehicleWheel3D2" type="VehicleWheel3D" parent="." unique_id=577252886]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43, -0.37199998, -0.5)
-use_as_traction = true
 wheel_radius = 0.25
 suspension_travel = 0.42
 suspension_stiffness = 15.5
@@ -54,7 +53,6 @@ mesh = SubResource("CylinderMesh_33qfd")
 
 [node name="VehicleWheel3D3" type="VehicleWheel3D" parent="." unique_id=906008913]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43, -0.37199998, -0.5)
-use_as_traction = true
 wheel_radius = 0.25
 suspension_travel = 0.42
 suspension_stiffness = 15.5
@@ -75,5 +73,8 @@ suspension_stiffness = 15.5
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_33qfd")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=383231136]
-transform = Transform3D(-1, -1.386428e-15, 8.742277e-08, 2.6833662e-08, 0.9517284, 0.30694136, -8.3202735e-08, 0.30694136, -0.9517284, 0, 0.6468606, -1.5297012)
+[node name="CameraHolder" type="Node3D" parent="." unique_id=679099427]
+top_level = true
+
+[node name="Camera3D" type="Camera3D" parent="CameraHolder" unique_id=383231136]
+transform = Transform3D(-1, -3.2485325e-15, 8.742276e-08, 3.523715e-08, 0.91517085, 0.40306613, -8.0006764e-08, 0.40306613, -0.91517085, 0, 0.81394684, -1.6101573)

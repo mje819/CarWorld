@@ -3,6 +3,9 @@ extends VehicleBody3D
 @export var force := 50
 @export var braking_force := 50
 @export var max_steer = 0.9
+#@onready var camera_3d: Camera3D = $Camera3D
+@onready var camera_holder: Node3D = $CameraHolder
+
 
 func _ready() -> void:
 	pass
@@ -15,3 +18,6 @@ func _physics_process(delta: float) -> void:
 	# Maybe only for testing
 	if Input.is_action_pressed("reset"):
 		get_tree().reload_current_scene()
+	
+	camera_holder.global_position = global_position
+	camera_holder.rotation.y = rotation.y
