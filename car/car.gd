@@ -1,8 +1,10 @@
 extends VehicleBody3D
+class_name Car
 
 @export var force := 50
 @export var braking_force := 50
 @export var max_steer = 0.9
+@export var health := 10
 #@onready var camera_3d: Camera3D = $Camera3D
 @onready var camera_holder: Node3D = $CameraHolder
 

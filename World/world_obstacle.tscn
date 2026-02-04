@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cujupp8cdvucr"]
+
+[ext_resource type="Script" uid="uid://n5ydgodyn863" path="res://World/world_obstacle.gd" id="1_wusto"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62w18"]
+albedo_color = Color(0.2970001, 0.26, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wxfgi"]
+size = Vector3(1.0328217, 1.0358582, 1.0292664)
+
+[node name="WorldObstacle" type="CSGBox3D" unique_id=383658853 groups=["Obstacles"]]
+use_collision = true
+material = SubResource("StandardMaterial3D_62w18")
+script = ExtResource("1_wusto")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1510485901]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=513994468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0025863647, 0.0024871826, -0.0020599365)
+shape = SubResource("BoxShape3D_wxfgi")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

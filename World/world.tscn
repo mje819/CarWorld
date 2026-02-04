@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bgvt3t4t4fprf"]
 
 [ext_resource type="PackedScene" uid="uid://bp14bgrvmaki2" path="res://car/car.tscn" id="1_62w18"]
+[ext_resource type="PackedScene" uid="uid://cujupp8cdvucr" path="res://World/world_obstacle.tscn" id="2_8a836"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a836"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,9 +16,6 @@ sky = SubResource("Sky_j8job")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62w18"]
-albedo_color = Color(0.2970001, 0.26, 1, 1)
-
 [node name="World" type="Node3D" unique_id=2090731207]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=281333146]
@@ -30,12 +28,13 @@ shadow_enabled = true
 [node name="Ground" type="CSGBox3D" parent="." unique_id=1902772988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 use_collision = true
-size = Vector3(100, 0.5, 100)
+size = Vector3(126.005, 0.5, 124.995)
 
 [node name="Car" parent="." unique_id=16548500 instance=ExtResource("1_62w18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
 
-[node name="ReferenceBlock" type="CSGBox3D" parent="." unique_id=334611726]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05973077, 0, 2.793522)
-use_collision = true
-material = SubResource("StandardMaterial3D_62w18")
+[node name="WorldObstacle" parent="." unique_id=383658853 instance=ExtResource("2_8a836")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3995054, 0.33358693, -2.2080088)
+
+[node name="WorldObstacle2" parent="." unique_id=25296065 instance=ExtResource("2_8a836")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.439541, 0.33358693, 2.801567)
