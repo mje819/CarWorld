@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bn3bjblw2g41t"]
+
+[ext_resource type="Script" uid="uid://ko70ygium1pa" path="res://Tracks/track.gd" id="1_kerva"]
+
+[sub_resource type="Curve3D" id="Curve3D_j8job"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.006, 0, -0.001, 0, 0, 0, 0, 0, 0, 0.752, 0, 3.001, 0, 0, 0, 0, 0, 0, 1.918, 0, 17.451, 0, 0, 0, 0, 0, 0, -1.412, 0, 32.828, 0, 0, 0, 0, 0, 0, -13.399, 0, 30.993, 0, 0, 0, 0, 0, 0, -23.258, 0, 24.554, 0, 0, 0, 0, 0, 0, -9.244, 0, 2.312, 0, 0, 0, 0, 0, 0, -3.226, 0, 1.207),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8job"]
+albedo_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6wdyf"]
+size = Vector3(4.0680313, 1, 0.4584961)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kerva"]
+
+[node name="Track1" type="Path3D" unique_id=1196417104]
+top_level = true
+curve = SubResource("Curve3D_j8job")
+script = ExtResource("1_kerva")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=1442105071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.692876)
+material_override = SubResource("StandardMaterial3D_j8job")
+polygon = PackedVector2Array(-2, 0, -2, 0.05, 2, 0.05, 2, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="StartDetector" type="Area3D" parent="CSGPolygon3D" unique_id=1437193464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0073156357, 0.1163249, 0.13937616)
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGPolygon3D/StartDetector" unique_id=173983941]
+transform = Transform3D(0.95861965, 0.02696207, 0.28341022, -0.02585577, 0.9996365, -0.007644105, -0.28351328, 0, 0.9589683, -0.03061875, 0.0008258447, 0.009055138)
+shape = SubResource("BoxShape3D_6wdyf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGPolygon3D/StartDetector" unique_id=612538413]
+mesh = SubResource("BoxMesh_kerva")
+
+[connection signal="body_entered" from="CSGPolygon3D/StartDetector" to="." method="_on_start_detector_body_entered"]

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bp14bgrvmaki2" path="res://car/car.tscn" id="1_62w18"]
 [ext_resource type="PackedScene" uid="uid://cujupp8cdvucr" path="res://World/world_obstacle.tscn" id="2_8a836"]
 [ext_resource type="PackedScene" uid="uid://cwu5dtg3vyawo" path="res://World/time_trial_start.tscn" id="3_j8job"]
+[ext_resource type="PackedScene" uid="uid://bn3bjblw2g41t" path="res://Tracks/track1.tscn" id="4_3f78f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a836"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,6 +17,9 @@ background_mode = 2
 sky = SubResource("Sky_j8job")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3f78f"]
+albedo_color = Color(0.015686275, 0.47843137, 0.078431375, 1)
 
 [node name="World" type="Node3D" unique_id=2090731207]
 
@@ -31,6 +35,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 use_collision = true
 collision_layer = 4
 size = Vector3(126.005, 0.5, 124.995)
+material = SubResource("StandardMaterial3D_3f78f")
 
 [node name="Car" parent="." unique_id=16548500 instance=ExtResource("1_62w18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
@@ -42,4 +47,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3995054, 0.33358693, -2.208
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.439541, 0.33358693, 2.801567)
 
 [node name="TimeTrialStart" parent="." unique_id=744200815 instance=ExtResource("3_j8job")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.0137367)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3063674, 0, -3.004191)
+track = ExtResource("4_3f78f")

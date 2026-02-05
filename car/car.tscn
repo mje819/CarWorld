@@ -23,6 +23,8 @@ mass = 105.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.2, 0)
 script = ExtResource("1_2gitb")
+force = 95
+braking_force = 95
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1041634466]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5691822, 0, -0.0060293674, 0)
@@ -34,7 +36,6 @@ shape = SubResource("BoxShape3D_2gitb")
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="." unique_id=1776042558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43, -0.37199998, 0.5)
-use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.25
 suspension_travel = 0.42
@@ -68,7 +69,6 @@ mesh = SubResource("CylinderMesh_33qfd")
 
 [node name="VehicleWheel3D4" type="VehicleWheel3D" parent="." unique_id=2004719744]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4349022, -0.3721079, 0.5)
-use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.25
 suspension_travel = 0.42
