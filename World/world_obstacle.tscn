@@ -10,6 +10,7 @@ size = Vector3(1.0328217, 1.0358582, 1.0292664)
 
 [node name="WorldObstacle" type="CSGBox3D" unique_id=383658853 groups=["Obstacles"]]
 use_collision = true
+collision_layer = 2
 material = SubResource("StandardMaterial3D_62w18")
 script = ExtResource("1_wusto")
 

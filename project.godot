@@ -56,6 +56,13 @@ reset={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="car"
+3d_physics/layer_2="obstacles"
+3d_physics/layer_3="starters"
+3d_physics/layer_4="ground"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -18,6 +18,7 @@ bottom_radius = 0.25
 height = 0.22
 
 [node name="Car" type="VehicleBody3D" unique_id=16548500]
+collision_mask = 14
 mass = 105.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.2, 0)

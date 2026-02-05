@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bp14bgrvmaki2" path="res://car/car.tscn" id="1_62w18"]
 [ext_resource type="PackedScene" uid="uid://cujupp8cdvucr" path="res://World/world_obstacle.tscn" id="2_8a836"]
+[ext_resource type="PackedScene" uid="uid://cwu5dtg3vyawo" path="res://World/time_trial_start.tscn" id="3_j8job"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a836"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,6 +29,7 @@ shadow_enabled = true
 [node name="Ground" type="CSGBox3D" parent="." unique_id=1902772988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 use_collision = true
+collision_layer = 4
 size = Vector3(126.005, 0.5, 124.995)
 
 [node name="Car" parent="." unique_id=16548500 instance=ExtResource("1_62w18")]
@@ -38,3 +40,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3995054, 0.33358693, -2.208
 
 [node name="WorldObstacle2" parent="." unique_id=25296065 instance=ExtResource("2_8a836")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.439541, 0.33358693, 2.801567)
+
+[node name="TimeTrialStart" parent="." unique_id=744200815 instance=ExtResource("3_j8job")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.0137367)
