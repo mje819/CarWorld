@@ -38,16 +38,15 @@ size = Vector3(126.005, 0.5, 124.995)
 material = SubResource("StandardMaterial3D_3f78f")
 
 [node name="Car" parent="." unique_id=16548500 instance=ExtResource("1_62w18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1434312, 0.65, -8.421466)
 
 [node name="WorldObstacle" parent="." unique_id=383658853 instance=ExtResource("2_8a836")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3995054, 0.33358693, -2.2080088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.997307, 0.33358693, -2.2080088)
 
 [node name="WorldObstacle2" parent="." unique_id=25296065 instance=ExtResource("2_8a836")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.439541, 0.33358693, 2.801567)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.363549, 0.33358693, -6.391548)
 
 [node name="TimeTrialStart" parent="." unique_id=744200815 node_paths=PackedStringArray("track") instance=ExtResource("3_j8job")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3063674, 0, -3.004191)
 track = NodePath("Track1")
 
 [node name="Track1" parent="TimeTrialStart" unique_id=1196417104 instance=ExtResource("4_3f78f")]
