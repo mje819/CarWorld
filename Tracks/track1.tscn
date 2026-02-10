@@ -4,7 +4,7 @@
 
 [sub_resource type="Curve3D" id="Curve3D_j8job"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.006, 0, -0.001, 0, 0, 0, 0, 0, 0, 0.752, 0, 3.001, 0, 0, 0, 0, 0, 0, 1.918, 0, 17.451, 0, 0, 0, 0, 0, 0, -1.412, 0, 32.828, 0, 0, 0, 0, 0, 0, -13.399, 0, 30.993, 0, 0, 0, 0, 0, 0, -23.258, 0, 24.554, 0, 0, 0, 0, 0, 0, -9.244, 0, 2.312, 0, 0, 0, 0, 0, 0, -3.226, 0, 1.207),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.006, 0, -0.074453905, 0, 0, 0, 0, 0, 0, 0.752, 0, 3.001, 0, 0, 0, 0, 0, 0, 1.918, 0, 17.451, 0, 0, 0, 0, 0, 0, -1.412, 0, 30.11248, 0, 0, 0, 0, 0, 0, -13.399, 0, 29.4472, 0, 0, 0, 0, 0, 0, -23.258, 0, 21.512806, 0, 0, 0, 0, 0, 0, -9.244, 0, 2.312, 0, 0, 0, 0, 0, 0, -3.226, 0, 0.71457124),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 8
@@ -17,13 +17,13 @@ size = Vector3(4.0680313, 1, 0.4584961)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kerva"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_58hot"]
+
 [node name="Track1" type="Path3D" unique_id=1196417104]
-top_level = true
 curve = SubResource("Curve3D_j8job")
 script = ExtResource("1_kerva")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=1442105071]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.692876)
 material_override = SubResource("StandardMaterial3D_j8job")
 polygon = PackedVector2Array(-2, 0, -2, 0.05, 2, 0.05, 2, 0)
 mode = 2
@@ -38,9 +38,10 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 
-[node name="StartDetector" type="Area3D" parent="CSGPolygon3D" unique_id=1437193464]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0073156357, 0.1163249, 0.13937616)
+[node name="StartDetector" type="Area3D" parent="CSGPolygon3D" unique_id=1437193464 groups=["Start and Finish Detectors"]]
+transform = Transform3D(0.9997015, 0, -0.024432182, 0, 1.0000001, 0, 0.024432179, 0, 0.9997016, 0.078597784, 0.1163249, 0.15390086)
 collision_layer = 4
+monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGPolygon3D/StartDetector" unique_id=173983941]
 transform = Transform3D(0.95861965, 0.02696207, 0.28341022, -0.02585577, 0.9996365, -0.007644105, -0.28351328, 0, 0.9589683, -0.03061875, 0.0008258447, 0.009055138)
@@ -49,4 +50,21 @@ shape = SubResource("BoxShape3D_6wdyf")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CSGPolygon3D/StartDetector" unique_id=612538413]
 mesh = SubResource("BoxMesh_kerva")
 
+[node name="FinishDetector" type="Area3D" parent="CSGPolygon3D" unique_id=1730004081 groups=["Start and Finish Detectors"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2721348, 0, 0.7974186)
+collision_layer = 4
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGPolygon3D/FinishDetector" unique_id=1314855739]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 0, 0, 0)
+shape = SubResource("BoxShape3D_6wdyf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGPolygon3D/FinishDetector/CollisionShape3D" unique_id=409233369]
+mesh = SubResource("BoxMesh_58hot")
+
+[node name="Timer" type="Timer" parent="." unique_id=291425853]
+wait_time = 0.1
+
 [connection signal="body_entered" from="CSGPolygon3D/StartDetector" to="." method="_on_start_detector_body_entered"]
+[connection signal="body_entered" from="CSGPolygon3D/FinishDetector" to="." method="_on_finish_detector_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
