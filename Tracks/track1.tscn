@@ -66,17 +66,19 @@ mesh = SubResource("BoxMesh_nuiww")
 [node name="Timer" type="Timer" parent="." unique_id=291425853]
 wait_time = 0.1
 
-[node name="Checkpoint1" type="Area3D" parent="." unique_id=593801342 groups=["Checkpoints"]]
+[node name="Checkpoint1" type="Area3D" parent="." unique_id=593801342 groups=["Checkpoints", "Start and Finish Detectors"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.299573)
 collision_layer = 4
+monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint1" unique_id=2075304324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.271637, 0, 0)
 shape = SubResource("BoxShape3D_kerva")
 
-[node name="Checkpoint2" type="Area3D" parent="." unique_id=941165851 groups=["Checkpoints"]]
+[node name="Checkpoint2" type="Area3D" parent="." unique_id=941165851 groups=["Checkpoints", "Start and Finish Detectors"]]
 transform = Transform3D(0.80626905, 0, -0.5915489, 0, 1, 0, 0.5915489, 0, 0.80626905, -20.03661, 0, 14.964659)
 collision_layer = 4
+monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint2" unique_id=1027172610]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.271637, 0, 0)

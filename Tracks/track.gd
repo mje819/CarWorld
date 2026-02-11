@@ -18,6 +18,8 @@ var all_checkpoints_passed := false
 
 func _on_start_detector_body_entered(_body: Node3D) -> void:
 	print("start timer")
+	for checkpoint in get_tree().get_nodes_in_group("Checkpoints"):
+		checkpoint.monitoring = true
 	timer.start()
 
 
@@ -50,7 +52,11 @@ func _on_checkpoint_1_body_entered(_body: Node3D) -> void:
 
 func reset_checkpoints():
 	checkpoint_1_passed = false
+	checkpoint_1.monitoring = false
+	
 	checkpoint_2_passed = false
+	checkpoint_2.monitoring = false
+	
 	all_checkpoints_passed = false
 
 
