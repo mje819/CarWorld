@@ -34,7 +34,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 use_collision = true
 collision_layer = 4
-size = Vector3(126.005, 0.5, 124.995)
+size = Vector3(300, 0.5, 300)
 material = SubResource("StandardMaterial3D_3f78f")
 
 [node name="Car" parent="." unique_id=16548500 instance=ExtResource("1_62w18")]
