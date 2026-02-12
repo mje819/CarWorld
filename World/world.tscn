@@ -50,4 +50,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.363549, 0.33358693, -6.391
 track = NodePath("Track1")
 
 [node name="Track1" parent="TimeTrialStart" unique_id=1196417104 instance=ExtResource("4_3f78f")]
-visible = false

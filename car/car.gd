@@ -13,7 +13,7 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	engine_force = -Input.get_axis("accelerate","brake") * force
+	engine_force = -Input.get_axis("accelerate","brake") * CarManager.engine_power
 	#print(self.position)
 	steering = move_toward(steering, Input.get_axis("turn_right","turn_left") * 0.9,delta)
 	
