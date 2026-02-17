@@ -17,10 +17,11 @@ var best_time : float
 var all_checkpoints_passed := false
 
 func _on_start_detector_body_entered(_body: Node3D) -> void:
-	print("start timer")
-	for checkpoint in get_tree().get_nodes_in_group("Checkpoints"):
-		checkpoint.monitoring = true
-	timer.start()
+	if visible:
+		print("start timer")
+		for checkpoint in get_tree().get_nodes_in_group("Checkpoints"):
+			checkpoint.monitoring = true
+		timer.start()
 
 
 func _on_timer_timeout() -> void:
