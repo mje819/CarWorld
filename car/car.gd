@@ -3,7 +3,7 @@ class_name Car
 
 @export var force := 50
 @export var braking_force := 50
-@export var max_steer = 0.9
+@export var max_steer = 0.5
 @export var health := 10
 #@onready var camera_3d: Camera3D = $Camera3D
 @onready var camera_holder: Node3D = $CameraHolder
@@ -15,7 +15,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	engine_force = -Input.get_axis("accelerate","brake") * CarManager.engine_power
 	#print(self.position)
-	steering = move_toward(steering, Input.get_axis("turn_right","turn_left") * 0.9,delta)
+	steering = move_toward(steering, Input.get_axis("turn_right","turn_left") * max_steer,delta)
 	
 	
 	

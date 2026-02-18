@@ -4,34 +4,34 @@
 
 [sub_resource type="Curve3D" id="Curve3D_j8job"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3.1266675, -12.754814, 5.522667, -0.81193924, 0.50037, -0.21947289, 0.81193924, -0.50037, 0.21947289, 10.927794, -8.636211, 1.0928755, 0, 0, 0, 0, 0, 0, 11.353729, -5.7654533, 22.606073, 0, 0, 0, 0, 0, 0, -1.412, 0, 30.11248, 0, 0, 0, 0, 0, 0, -13.399, 0, 29.4472, 0, 0, 0, 0, 0, 0, -26.33083, 3.042469, 24.874962, 0, 0, 0, 0, 0, 0, -17.48644, 1.7614641, -8.4155445, 0, 0, 0, 0, 0, 0, -6.5871625, -5.0153656, -2.1070213),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -137.955, 0, -145.187, -7.516035, 0, -0.4374771, 7.516035, 0, 0.4374771, -134.546, 0, -133.695, -2.6222382, 0, -9.744404, 2.6222382, 0, 9.744404, -111.896, 0, -125.59, -2.1914635, 0, -11.55077, 2.1914635, 0, 11.55077, -112.074, 0, -110.555, -2.4641914, 0, 7.9755287, 2.4641914, 0, -7.9755287, -88.756, 0, -127.265, -13.290508, 0, 1.1590042, 13.290508, 0, -1.1590042, -92.34, 0, -152.931, -6.7836685, 0, -20.035295, 6.7836685, 0, 20.035295, -35.834, 0, -147.914, 15.011276, 0, -21.012241, -15.011276, 0, 21.012241, -24.625, 0, -106.237, 13.919098, 0, -25.27172, -13.919098, 0, 25.27172, -69.691, 0, -89.497, 8.855709, 0, 1.1389084, -8.855709, 0, -1.1389084, -95.704, 0, -65.074, 0, 0, 0, 0, 0, 0, -121.958, 0, -69.229, 4.5458965, 0, 6.8319817, -4.5458965, 0, -6.8319817, -132.052, 0, -89.768, 10.997, 0, 0.6913338, -10.997, 0, -0.6913338, -145.97, 0, -96.333, 13.867924, 0, 4.48188, -13.867924, 0, -4.48188, -174.289, 0, -93.603, -0.68120575, 0, 14.383558, 0.68120575, 0, -14.383558, -212.104, 0, -111.789, -9.335831, 0, 14.428112, 9.335831, 0, -14.428112, -213.333, 0, -134.448, -12.2520485, 0, 5.7477837, 12.2520485, 0, -5.7477837, -195.51, 0, -153.756, -8.085505, 0, -2.651535, 8.085505, 0, 2.651535, -166.207, 0, -143.254, 0, 0, 0, 0, 0, 0, -154.371, 0, -148.161),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 8
-up_vector_enabled = false
+point_count = 19
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kerva"]
 albedo_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58hot"]
-size = Vector3(4.2854614, 1, 1)
+size = Vector3(6.3531036, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jiixp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5g37k"]
-size = Vector3(1, 1, 4.207947)
+size = Vector3(1, 1, 6.06279)
 
 [sub_resource type="BoxMesh" id="BoxMesh_nuiww"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kerva"]
-size = Vector3(4.2006226, 1, 1)
+size = Vector3(6.471115, 1, 1)
 
 [node name="Track2" type="Path3D" unique_id=1196417104]
+top_level = true
 curve = SubResource("Curve3D_j8job")
 script = ExtResource("1_2soc0")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=1861846978]
-polygon = PackedVector2Array(2, 0, 2, 0.05, -2, 0.05, -2, 0)
+polygon = PackedVector2Array(3, 0, 3, 0.05, -3, 0.05, -3, 0)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -46,19 +46,27 @@ path_joined = false
 material = SubResource("StandardMaterial3D_kerva")
 
 [node name="StartDetector" type="Area3D" parent="CSGPolygon3D" unique_id=1938198562]
+transform = Transform3D(0.8380045, 0, -0.54566324, 0, 1, 0, 0.54566324, 0, 0.8380045, -138.08136, 0, -145.07593)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGPolygon3D/StartDetector" unique_id=1466429589]
-transform = Transform3D(0.9729616, 0, 0.23096684, 0, 1, 0, -0.23096684, 0, 0.9729616, 0.058440387, 0, 0.18593578)
+transform = Transform3D(0.97296154, 0, 0.2309668, 0, 1, 0, -0.2309668, 0, 0.97296154, 0.07571411, 0, 0.18183899)
 shape = SubResource("BoxShape3D_58hot")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CSGPolygon3D/StartDetector" unique_id=872251620]
 mesh = SubResource("BoxMesh_jiixp")
 
+[node name="Label3D" type="Label3D" parent="CSGPolygon3D/StartDetector" unique_id=154141666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0800543, 0)
+billboard = 1
+text = "START"
+font_size = 128
+outline_size = 32
+
 [node name="FinishDetector" type="Area3D" parent="CSGPolygon3D" unique_id=1719197141]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4210951, 0, 0)
+transform = Transform3D(0.7049314, 0, 0.7092755, 0, 1, 0, -0.7092755, 0, 0.7049314, -155.14305, 0, -148.5312)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGPolygon3D/FinishDetector" unique_id=2130445193]
-transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 0, 0, 0.78361464)
+transform = Transform3D(0.965925, 0, 0.25881916, 0, 1, 0, -0.25881916, 0, 0.965925, 0.017181396, 0, 0.84773254)
 shape = SubResource("BoxShape3D_5g37k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CSGPolygon3D/FinishDetector" unique_id=1486598639]
@@ -68,16 +76,25 @@ mesh = SubResource("BoxMesh_nuiww")
 wait_time = 0.1
 
 [node name="Checkpoint1" type="Area3D" parent="." unique_id=593801342 groups=["Checkpoints", "Start and Finish Detectors"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.299573)
+transform = Transform3D(0.81695384, 0, -0.5767033, 0, 1, 0, 0.5767033, 0, 0.81695384, -92.42025, 0, -122.81654)
 collision_layer = 4
 monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint1" unique_id=2075304324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.242279, 0, 7.6293945e-06)
+shape = SubResource("BoxShape3D_kerva")
+
+[node name="Checkpoint4" type="Area3D" parent="." unique_id=289940819 groups=["Checkpoints", "Start and Finish Detectors"]]
+transform = Transform3D(-0.7665154, 0, 0.642226, 0, 1, 0, -0.642226, 0, -0.7665154, -65.13366, 0, -94.02293)
+collision_layer = 4
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint4" unique_id=936053628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.271637, 0, 0)
 shape = SubResource("BoxShape3D_kerva")
 
 [node name="Checkpoint2" type="Area3D" parent="." unique_id=941165851 groups=["Checkpoints", "Start and Finish Detectors"]]
-transform = Transform3D(0.80626905, 0, -0.5915489, 0, 1, 0, 0.5915489, 0, 0.80626905, -20.03661, 0, 14.964659)
+transform = Transform3D(-0.08559087, 0, -0.99633044, 0, 1, 0, 0.99633044, 0, -0.08559087, -140.55966, 0, -97.2844)
 collision_layer = 4
 monitoring = false
 
@@ -85,8 +102,19 @@ monitoring = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.271637, 0, 0)
 shape = SubResource("BoxShape3D_kerva")
 
+[node name="Checkpoint3" type="Area3D" parent="." unique_id=793348826 groups=["Checkpoints", "Start and Finish Detectors"]]
+transform = Transform3D(-0.8750847, 0, 0.48396972, 0, 1, 0, -0.48396972, 0, -0.8750847, -213.90265, 0, -131.13132)
+collision_layer = 4
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint3" unique_id=808157563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.271637, 0, 0)
+shape = SubResource("BoxShape3D_kerva")
+
 [connection signal="body_entered" from="CSGPolygon3D/StartDetector" to="." method="_on_start_detector_body_entered"]
 [connection signal="body_entered" from="CSGPolygon3D/FinishDetector" to="." method="_on_finish_detector_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Checkpoint1" to="." method="_on_checkpoint_1_body_entered"]
+[connection signal="body_entered" from="Checkpoint4" to="." method="_on_checkpoint_1_body_entered"]
 [connection signal="body_entered" from="Checkpoint2" to="." method="_on_checkpoint_2_body_entered"]
+[connection signal="body_entered" from="Checkpoint3" to="." method="_on_checkpoint_2_body_entered"]

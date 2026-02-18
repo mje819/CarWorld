@@ -6,7 +6,7 @@ var engine_power : int:
 			new_engine_power = 0
 		engine_power = new_engine_power
 		print("power: " + str(engine_power))
-
+@export var max_power := 150
 @export var max_health := 10
 var health : int :
 	set(new_health):
@@ -22,6 +22,7 @@ func _process(_delta: float) -> void:
 	# Maybe only for testing
 	if Input.is_action_just_pressed("reset"):
 		health = max_health
+		engine_power = max_power
 		get_tree().reload_current_scene()
 
 func take_damage() -> void:
