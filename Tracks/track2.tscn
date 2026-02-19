@@ -111,6 +111,9 @@ monitoring = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.271637, 0, 0)
 shape = SubResource("BoxShape3D_kerva")
 
+[node name="StartPoint" type="Marker3D" parent="." unique_id=531732849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.46489, 0, -154.00258)
+
 [connection signal="body_entered" from="CSGPolygon3D/StartDetector" to="." method="_on_start_detector_body_entered"]
 [connection signal="body_entered" from="CSGPolygon3D/FinishDetector" to="." method="_on_finish_detector_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -8,6 +8,10 @@ var checkpoint_1_passed := false
 var checkpoint_2_passed := false
 
 @onready var timer: Timer = $Timer
+
+@onready var start_point: Marker3D = $StartPoint
+
+
 var time_elapsed : float = 0:
 	set(new_time):
 		time_elapsed = new_time

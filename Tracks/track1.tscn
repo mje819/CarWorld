@@ -90,6 +90,9 @@ monitoring = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint2" unique_id=1027172610]
 shape = SubResource("BoxShape3D_kerva")
 
+[node name="StartPoint" type="Marker3D" parent="." unique_id=1180571150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.076493, 0, 6.4640617)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="StartDetector" to="." method="_on_start_detector_body_entered"]
 [connection signal="body_entered" from="FinishDetector" to="." method="_on_finish_detector_body_entered"]

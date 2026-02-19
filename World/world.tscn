@@ -22,6 +22,11 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3f78f"]
 albedo_color = Color(0.015686275, 0.47843137, 0.078431375, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_k8do8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bkhv4"]
+size = Vector3(0.2487793, 0.22732544, 0.26782227)
+
 [node name="World" type="Node3D" unique_id=2090731207]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=281333146]
@@ -44,27 +49,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1434312, 0.65, -8.421466)
 [node name="WorldObstacle" parent="." unique_id=383658853 instance=ExtResource("2_8a836")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.997307, 0.33358693, -2.2080088)
 
+[node name="WorldObstacle4" parent="." unique_id=1790128646 instance=ExtResource("2_8a836")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.636566, 2.3380392, -20.016537)
+size = Vector3(5, 5, 5)
+
+[node name="WorldObstacle5" parent="." unique_id=291291156 instance=ExtResource("2_8a836")]
+transform = Transform3D(0.9435295, 0, -0.3312885, 0, 1, 0, 0.3312885, 0, 0.9435295, 6.667097, 2.3380392, 30.34925)
+size = Vector3(10.760284, 5, 15.526062)
+
 [node name="WorldObstacle2" parent="." unique_id=25296065 instance=ExtResource("2_8a836")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.363549, 0.33358693, -6.391548)
 
+[node name="WorldObstacle3" parent="." unique_id=660152246 instance=ExtResource("2_8a836")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8422, 0.33358693, 3.394927)
+
 [node name="TimeTrialStart" parent="." unique_id=744200815 node_paths=PackedStringArray("track") instance=ExtResource("3_j8job")]
 track = NodePath("Track1")
+
+[node name="MeshInstance3D" parent="TimeTrialStart" index="0" unique_id=130989989]
+mesh = SubResource("BoxMesh_k8do8")
+
+[node name="CollisionShape3D" parent="TimeTrialStart" index="1" unique_id=126272650]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.019042969, 0.07989502, -0.00048828125)
+shape = SubResource("BoxShape3D_bkhv4")
 
 [node name="Track1" parent="TimeTrialStart" unique_id=1196417104 instance=ExtResource("4_3f78f")]
 visible = false
 
 [node name="TimeTrialStart2" parent="." unique_id=1114075049 node_paths=PackedStringArray("track") instance=ExtResource("3_j8job")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.599556, 0, -64.02699)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.815323, 0, -97.37358)
 top_level = true
 track = NodePath("Track2")
 
 [node name="Track2" parent="TimeTrialStart2" unique_id=1927837917 instance=ExtResource("5_k8do8")]
-visible = false
 
 [node name="Ramp" type="CSGPolygon3D" parent="." unique_id=918745583]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.471953, 5.9604645e-08, 3.7431784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.59, 0, 4.344)
 use_collision = true
 collision_layer = 8
-polygon = PackedVector2Array(0.63203144, 0.2632085, 1.8005981, 0.53009075, 2.7903128, 1.0474825, 2.75, 0.5, 2.7422867, 0.04280299, 1.4957981, 0.016738355, -1, 0)
+polygon = PackedVector2Array(0.63203144, 0.2632085, 1.873002, 0.56519365, 3.223113, 1.367183, 3.148015, 0.5841581, 3.105, 0, 1.496, 0, -1, 0)
 depth = 2.0
 smooth_faces = true
+
+[editable path="TimeTrialStart"]
