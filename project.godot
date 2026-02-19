@@ -24,6 +24,8 @@ CarManager="*uid://m84eolvwtmvf"
 Obstacles=""
 "Start and Finish Detectors"=""
 Checkpoints=""
+HUD=""
+"Health Label"=""
 
 [input]
 

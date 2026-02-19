@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cwu5dtg3vyawo" path="res://World/time_trial_start.tscn" id="3_j8job"]
 [ext_resource type="PackedScene" uid="uid://bn3bjblw2g41t" path="res://Tracks/track1.tscn" id="4_3f78f"]
 [ext_resource type="PackedScene" uid="uid://cj7ue6i7pj2fb" path="res://Tracks/track2.tscn" id="5_k8do8"]
+[ext_resource type="Script" uid="uid://b30hhju6usgmc" path="res://HUD/hud.gd" id="6_bkhv4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a836"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,6 +27,15 @@ albedo_color = Color(0.015686275, 0.47843137, 0.078431375, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bkhv4"]
 size = Vector3(0.2487793, 0.22732544, 0.26782227)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k8do8"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_bkhv4"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf0ba"]
+font_size = 32
 
 [node name="World" type="Node3D" unique_id=2090731207]
 
@@ -90,5 +100,35 @@ collision_layer = 8
 polygon = PackedVector2Array(0.63203144, 0.2632085, 1.873002, 0.56519365, 3.223113, 1.367183, 3.148015, 0.5841581, 3.105, 0, 1.496, 0, -1, 0)
 depth = 2.0
 smooth_faces = true
+
+[node name="HUD" type="MarginContainer" parent="." unique_id=384407738 groups=["HUD"]]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -175.0
+offset_right = 142.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+script = ExtResource("6_bkhv4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD" unique_id=666184862]
+layout_mode = 2
+alignment = 1
+
+[node name="Track1BestTime" type="Label" parent="HUD/VBoxContainer" unique_id=966440508]
+layout_mode = 2
+text = "Track 1 Best time: 9999.99"
+label_settings = SubResource("LabelSettings_k8do8")
+
+[node name="Track2BestTime" type="Label" parent="HUD/VBoxContainer" unique_id=1604883098]
+layout_mode = 2
+text = "Track 2 Best time:"
+label_settings = SubResource("LabelSettings_bkhv4")
+
+[node name="HealthLabel" type="Label" parent="HUD/VBoxContainer" unique_id=1934339005 groups=["Health Label"]]
+layout_mode = 2
+text = "Health: 90"
+label_settings = SubResource("LabelSettings_yf0ba")
 
 [editable path="TimeTrialStart"]

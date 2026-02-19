@@ -1,5 +1,7 @@
 extends Node
 
+var health_label 
+
 var engine_power : int:
 	set(new_engine_power):
 		if new_engine_power < 0:
@@ -13,8 +15,10 @@ var health : int :
 		health = new_health
 		print(health)
 		#label changes?
+		health_label.text = "Health: " + str(health)
 
 func _ready() -> void:
+	health_label = get_tree().get_first_node_in_group("Health Label")
 	health = max_health
 	engine_power = 150
 
