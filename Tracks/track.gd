@@ -6,6 +6,10 @@ class_name Track
 var checkpoint_1_passed := false
 @onready var checkpoint_2: Area3D = $Checkpoint2
 var checkpoint_2_passed := false
+@onready var checkpoint_3: Area3D = $Checkpoint3
+var checkpoint_3_passed := false
+@onready var checkpoint_4: Area3D = $Checkpoint4
+var checkpoint_4_passed := false
 
 @onready var timer: Timer = $Timer
 
@@ -13,6 +17,7 @@ var checkpoint_2_passed := false
 
 var track1_best_label
 var track2_best_label
+@export var is_track_1 : bool
 
 var time_elapsed : float = 0:
 	set(new_time):
@@ -22,7 +27,9 @@ var best_time : float
 
 var all_checkpoints_passed := false
 
-
+func _ready() -> void:
+	track1_best_label = get_tree().get_first_node_in_group("Track1BestTimeLabel")
+	track2_best_label = get_tree().get_first_node_in_group("Track2BestTimeLabel")
 
 func _on_start_detector_body_entered(_body: Node3D) -> void:
 	if visible:
@@ -37,11 +44,8 @@ func _on_timer_timeout() -> void:
 
 
 func _on_finish_detector_body_entered(_body: Node3D) -> void:
-	for checkpoint in get_tree().get_nodes_in_group("Checkpoints"):
+	if checkpoint_4_passed and checkpoint_1_passed and checkpoint_2_passed and checkpoint_3_passed:
 		all_checkpoints_passed = true
-		if checkpoint.passed == false:
-			all_checkpoints_passed = false
-			break
 
 	if all_checkpoints_passed:
 		if !timer.is_stopped():
@@ -49,6 +53,7 @@ func _on_finish_detector_body_entered(_body: Node3D) -> void:
 			if best_time != 0:
 				if time_elapsed < best_time:
 					best_time = time_elapsed
+					
 			else:
 				best_time = time_elapsed
 		
@@ -56,6 +61,8 @@ func _on_finish_detector_body_entered(_body: Node3D) -> void:
 			time_elapsed = 0
 			
 			print("Best: " + str(best_time))
+			if is_track_1:
+				track1_best_label.text = "Track 1 best time: " + str(best_time)
 			reset_checkpoints()
 
 
@@ -75,3 +82,11 @@ func reset_checkpoints():
 
 func _on_checkpoint_2_body_entered(_body: Node3D) -> void:
 	checkpoint_2_passed = true
+
+
+func _on_checkpoint_3_body_entered(_body: Node3D) -> void:
+	checkpoint_3_passed = true
+
+
+func _on_checkpoint_4_body_entered(_body: Node3D) -> void:
+	checkpoint_4_passed = true

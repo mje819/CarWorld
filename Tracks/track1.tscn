@@ -28,6 +28,7 @@ size = Vector3(4.2006226, 1, 1)
 [node name="Track1" type="Path3D" unique_id=1196417104]
 curve = SubResource("Curve3D_j8job")
 script = ExtResource("1_kerva")
+is_track_1 = true
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=1861846978]
 polygon = PackedVector2Array(2, 0, 2, 0.05, -2, 0.05, -2, 0)
@@ -82,6 +83,22 @@ monitoring = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint1" unique_id=2075304324]
 shape = SubResource("BoxShape3D_kerva")
 
+[node name="Checkpoint3" type="Area3D" parent="." unique_id=2015984525 groups=["Checkpoints", "Start and Finish Detectors"]]
+transform = Transform3D(-0.07619697, 0, -0.9970927, 0, 1, 0, 0.9970927, 0, -0.07619697, 10.596039, 0, 42.502884)
+collision_layer = 4
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint3" unique_id=2021507924]
+shape = SubResource("BoxShape3D_kerva")
+
+[node name="Checkpoint4" type="Area3D" parent="." unique_id=1297797047 groups=["Checkpoints", "Start and Finish Detectors"]]
+transform = Transform3D(-0.60454345, 0, -0.7965721, 0, 1, 0, 0.7965721, 0, -0.60454345, -3.9160507, 0, 37.49473)
+collision_layer = 4
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint4" unique_id=1962505385]
+shape = SubResource("BoxShape3D_kerva")
+
 [node name="Checkpoint2" type="Area3D" parent="." unique_id=941165851 groups=["Checkpoints", "Start and Finish Detectors"]]
 transform = Transform3D(0.80626905, 0, -0.5915489, 0, 1, 0, 0.5915489, 0, 0.80626905, -0.525, 0, 23.422)
 collision_layer = 4
@@ -97,4 +114,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.076493, 0, 6.4640617)
 [connection signal="body_entered" from="StartDetector" to="." method="_on_start_detector_body_entered"]
 [connection signal="body_entered" from="FinishDetector" to="." method="_on_finish_detector_body_entered"]
 [connection signal="body_entered" from="Checkpoint1" to="." method="_on_checkpoint_1_body_entered"]
+[connection signal="body_entered" from="Checkpoint3" to="." method="_on_checkpoint_3_body_entered"]
+[connection signal="body_entered" from="Checkpoint4" to="." method="_on_checkpoint_4_body_entered"]
 [connection signal="body_entered" from="Checkpoint2" to="." method="_on_checkpoint_2_body_entered"]
