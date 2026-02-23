@@ -21,3 +21,4 @@ func _on_body_entered(_body: Node3D) -> void:
 	_body.global_position = start_point.global_position
 	_body.global_rotation = start_point.global_rotation
 	_body.engine_force = 0
+	_body.linear_velocity = Vector3(0,0,0)

@@ -11,6 +11,8 @@ var checkpoint_2_passed := false
 
 @onready var start_point: Marker3D = $StartPoint
 
+var track1_best_label
+var track2_best_label
 
 var time_elapsed : float = 0:
 	set(new_time):
@@ -19,6 +21,8 @@ var time_elapsed : float = 0:
 var best_time : float
 
 var all_checkpoints_passed := false
+
+
 
 func _on_start_detector_body_entered(_body: Node3D) -> void:
 	if visible:
@@ -33,8 +37,12 @@ func _on_timer_timeout() -> void:
 
 
 func _on_finish_detector_body_entered(_body: Node3D) -> void:
-	if checkpoint_1_passed and checkpoint_2_passed:
+	for checkpoint in get_tree().get_nodes_in_group("Checkpoints"):
 		all_checkpoints_passed = true
+		if checkpoint.passed == false:
+			all_checkpoints_passed = false
+			break
+
 	if all_checkpoints_passed:
 		if !timer.is_stopped():
 			print("finished")

@@ -26,6 +26,8 @@ Obstacles=""
 Checkpoints=""
 HUD=""
 "Health Label"=""
+Track2BestTimeLabel=""
+Track1BestTimeLabel=""
 
 [input]
 

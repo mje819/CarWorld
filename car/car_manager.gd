@@ -20,15 +20,16 @@ var health : int :
 func _ready() -> void:
 	health_label = get_tree().get_first_node_in_group("Health Label")
 	health = max_health
-	engine_power = 150
+	engine_power = max_power
 
 func _process(_delta: float) -> void:
 	# Maybe only for testing
-	if Input.is_action_just_pressed("reset"):
-		health = max_health
-		engine_power = max_power
-		get_tree().reload_current_scene()
-
+	#if Input.is_action_just_pressed("reset"):
+		#health = max_health
+		#engine_power = max_power
+		#get_tree().reload_current_scene()
+	pass
+	
 func take_damage() -> void:
 	health -= 1
 	engine_power -= 15
