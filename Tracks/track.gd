@@ -62,7 +62,10 @@ func _on_finish_detector_body_entered(_body: Node3D) -> void:
 			
 			print("Best: " + str(best_time))
 			if is_track_1:
-				track1_best_label.text = "Track 1 best time: " + str(best_time)
+				track1_best_label.text = "Track 1 Best time: " + str(round_to_dec(best_time,2))
+			else:
+				track2_best_label.text = "Track 2 Best time: " + str(round_to_dec(best_time,2))
+			
 			reset_checkpoints()
 
 
@@ -90,3 +93,6 @@ func _on_checkpoint_3_body_entered(_body: Node3D) -> void:
 
 func _on_checkpoint_4_body_entered(_body: Node3D) -> void:
 	checkpoint_4_passed = true
+
+func round_to_dec(num, digit):
+	return round(num * pow(10.0, digit)) / pow(10.0, digit)
