@@ -28,6 +28,7 @@ HUD=""
 "Health Label"=""
 Track2BestTimeLabel=""
 Track1BestTimeLabel=""
+CurrentTime=""
 
 [input]
 

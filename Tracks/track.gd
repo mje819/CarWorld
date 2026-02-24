@@ -18,6 +18,7 @@ var checkpoint_4_passed := false
 var track1_best_label
 var track2_best_label
 @export var is_track_1 : bool
+var current_time_label
 
 var time_elapsed : float = 0:
 	set(new_time):
@@ -30,7 +31,8 @@ var all_checkpoints_passed := false
 func _ready() -> void:
 	track1_best_label = get_tree().get_first_node_in_group("Track1BestTimeLabel")
 	track2_best_label = get_tree().get_first_node_in_group("Track2BestTimeLabel")
-
+	current_time_label = get_tree().get_first_node_in_group("CurrentTime")
+	
 func _on_start_detector_body_entered(_body: Node3D) -> void:
 	if visible:
 		print("start timer")
@@ -41,6 +43,7 @@ func _on_start_detector_body_entered(_body: Node3D) -> void:
 
 func _on_timer_timeout() -> void:
 	time_elapsed += 0.1
+	current_time_label.text = "Current Time: " + str(round_to_dec(time_elapsed,2))
 
 
 func _on_finish_detector_body_entered(_body: Node3D) -> void:

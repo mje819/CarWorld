@@ -38,6 +38,9 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_yf0ba"]
 font_size = 32
 
+[sub_resource type="LabelSettings" id="LabelSettings_eidgh"]
+font_size = 32
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62w18"]
 albedo_color = Color(0.2970001, 0.26, 1, 1)
 
@@ -67,11 +70,11 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 use_collision = true
 collision_layer = 4
-size = Vector3(500, 0.5, 500)
+size = Vector3(470, 0.5, 450)
 material = SubResource("StandardMaterial3D_3f78f")
 
 [node name="Car" parent="." unique_id=16548500 instance=ExtResource("1_62w18")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -39.475037, 0.65000093, -30.877048)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -0.08734894, 0.65000093, -21.5424)
 
 [node name="TimeTrialStart" parent="." unique_id=744200815 node_paths=PackedStringArray("track") instance=ExtResource("3_j8job")]
 track = NodePath("Track1")
@@ -84,11 +87,15 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.019042969, 0.07989502, -0.0
 shape = SubResource("BoxShape3D_bkhv4")
 
 [node name="Track1" parent="TimeTrialStart" unique_id=1196417104 instance=ExtResource("4_3f78f")]
+visible = false
 
 [node name="TimeTrialStart2" parent="." unique_id=1114075049 node_paths=PackedStringArray("track") instance=ExtResource("3_j8job")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.815323, 0, -97.37358)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.815323, 0, -32.796383)
 top_level = true
 track = NodePath("Track2")
+
+[node name="Label3D" parent="TimeTrialStart2" index="2" unique_id=1802937199]
+text = "TIME TRIAL 2"
 
 [node name="Track2" parent="TimeTrialStart2" unique_id=1927837917 instance=ExtResource("5_k8do8")]
 
@@ -96,7 +103,7 @@ track = NodePath("Track2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.59, 0, 4.344)
 use_collision = true
 collision_layer = 8
-polygon = PackedVector2Array(0.63203144, 0.2632085, 1.873002, 0.56519365, 3.223113, 1.367183, 3.148015, 0.5841581, 3.105, 0, 1.496, 0, -1, 0)
+polygon = PackedVector2Array(0.9150524, 0.27309006, 1.7714939, 0.46733445, 2.504325, 0.7675304, 3.223113, 1.367183, 3.148015, 0.5841581, 3.105, 0, 2, 0, 0.445, 0, -1.122, 0)
 depth = 2.0
 smooth_faces = true
 
@@ -109,18 +116,19 @@ depth = 5.5
 smooth_faces = true
 
 [node name="HUD" type="MarginContainer" parent="." unique_id=384407738 groups=["HUD"]]
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -175.0
-offset_right = 142.0
-grow_vertical = 0
-size_flags_horizontal = 0
-size_flags_vertical = 8
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 script = ExtResource("6_bkhv4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD" unique_id=666184862]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 alignment = 1
 
 [node name="Track1BestTime" type="Label" parent="HUD/VBoxContainer" unique_id=966440508 groups=["Track1BestTimeLabel"]]
@@ -138,8 +146,16 @@ layout_mode = 2
 text = "Health: 90"
 label_settings = SubResource("LabelSettings_yf0ba")
 
+[node name="CurrentTimeLabel" type="Label" parent="HUD" unique_id=660635940 groups=["CurrentTime"]]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Current Time: 0000"
+label_settings = SubResource("LabelSettings_eidgh")
+
 [node name="WorldObstacle" type="CSGBox3D" parent="." unique_id=383658853 groups=["Obstacles"]]
-transform = Transform3D(0.9571479, 0, -0.28959987, 0, 1, 0, 0.28959987, 0, 0.9571479, 6.775532, 1.279957, 30.22466)
+transform = Transform3D(0.9571479, 0, -0.28959987, 0, 1, 0, 0.28959987, 0, 0.9571479, 18.776, 1.28, 42.82914)
+visible = false
 use_collision = true
 collision_layer = 2
 size = Vector3(10.408413, 3.0388184, 15.604616)
@@ -168,6 +184,7 @@ shape = SubResource("BoxShape3D_wusto")
 
 [node name="WorldObstacle3" type="CSGBox3D" parent="." unique_id=386466538 groups=["Obstacles"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.443888, 0.58058643, -8.544146)
+visible = false
 use_collision = true
 collision_layer = 2
 size = Vector3(2.5, 2.5, 2.5)
@@ -209,7 +226,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007271886, 0.011734962, -0
 shape = SubResource("BoxShape3D_eidgh")
 
 [node name="WorldObstacle6" type="CSGBox3D" parent="." unique_id=1525824146 groups=["Obstacles"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.968422, 0.581, -8.54)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.404858, 0.581, -8.54)
 use_collision = true
 collision_layer = 2
 size = Vector3(2.5, 2.5, 2.5)
@@ -223,7 +240,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007271886, 0.011734962, -0
 shape = SubResource("BoxShape3D_eidgh")
 
 [node name="WorldObstacle7" type="CSGBox3D" parent="." unique_id=1489530060 groups=["Obstacles"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.98306, 0.581, -8.54)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.74355, 0.581, -8.54)
 use_collision = true
 collision_layer = 2
 size = Vector3(2.5, 2.5, 2.5)
@@ -245,3 +262,4 @@ shape = SubResource("BoxShape3D_eidgh")
 [connection signal="body_entered" from="WorldObstacle7/Area3D" to="WorldObstacle7" method="_on_area_3d_body_entered"]
 
 [editable path="TimeTrialStart"]
+[editable path="TimeTrialStart2"]
