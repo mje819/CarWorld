@@ -73,7 +73,6 @@ func _on_finish_detector_body_entered(_body: Node3D) -> void:
 			#current_time_label.visible = false
 			reset_checkpoints()
 
-
 func _on_checkpoint_1_body_entered(_body: Node3D) -> void:
 	checkpoint_1_passed = true
 
