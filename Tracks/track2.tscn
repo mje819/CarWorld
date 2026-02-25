@@ -72,6 +72,14 @@ shape = SubResource("BoxShape3D_5g37k")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CSGPolygon3D/FinishDetector" unique_id=1486598639]
 mesh = SubResource("BoxMesh_nuiww")
 
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CSGPolygon3D/FinishDetector" unique_id=948192271]
+transform = Transform3D(0.21953398, -0.9738957, 0.057720147, -0.011391148, -0.061718084, -0.9980286, 0.975538, 0.21844414, -0.024642913, 0.06074524, -1.7113991, 0.7518616)
+use_collision = true
+collision_layer = 2
+inner_radius = 4.0
+outer_radius = 5.0
+sides = 32
+
 [node name="Timer" type="Timer" parent="." unique_id=291425853]
 wait_time = 0.1
 
@@ -84,6 +92,14 @@ monitoring = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.242279, 0, 7.6293945e-06)
 shape = SubResource("BoxShape3D_kerva")
 
+[node name="CSGTorus3D2" type="CSGTorus3D" parent="Checkpoint1" unique_id=2001087218]
+transform = Transform3D(0.9984926, 0.05288267, -0.0146665685, -0.011391148, -0.061718084, -0.9980286, -0.05368319, 0.99669164, -0.061022785, 1.1795044, -1.7113991, -0.3398323)
+use_collision = true
+collision_layer = 2
+inner_radius = 4.0
+outer_radius = 5.0
+sides = 32
+
 [node name="Checkpoint4" type="Area3D" parent="." unique_id=289940819 groups=["Checkpoints", "Start and Finish Detectors"]]
 transform = Transform3D(-0.7665154, 0, 0.642226, 0, 1, 0, -0.642226, 0, -0.7665154, -65.13366, 0, -94.02293)
 collision_layer = 4
@@ -92,6 +108,14 @@ monitoring = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint4" unique_id=936053628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.271637, 0, 0)
 shape = SubResource("BoxShape3D_kerva")
+
+[node name="CSGTorus3D3" type="CSGTorus3D" parent="Checkpoint4" unique_id=1916516184]
+transform = Transform3D(-0.9993322, 0.03535211, 0.009219699, -0.011391147, -0.06171809, -0.9980287, -0.034713894, -0.9974677, 0.06207969, 1.307785, -1.6047206, 0.21430206)
+use_collision = true
+collision_layer = 2
+inner_radius = 4.0
+outer_radius = 5.0
+sides = 32
 
 [node name="Checkpoint2" type="Area3D" parent="." unique_id=941165851 groups=["Checkpoints", "Start and Finish Detectors"]]
 transform = Transform3D(-0.08559087, 0, -0.99633044, 0, 1, 0, 0.99633044, 0, -0.08559087, -140.55966, 0, -97.2844)
@@ -102,6 +126,14 @@ monitoring = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.271637, 0, 0)
 shape = SubResource("BoxShape3D_kerva")
 
+[node name="CSGTorus3D4" type="CSGTorus3D" parent="Checkpoint2" unique_id=1236063387]
+transform = Transform3D(0.9998927, -0.009891301, -0.010800589, -0.011391145, -0.06171809, -0.9980287, 0.009205617, 0.9980449, -0.061824262, 1.2339249, -1.605, -0.058380127)
+use_collision = true
+collision_layer = 2
+inner_radius = 4.0
+outer_radius = 5.0
+sides = 32
+
 [node name="Checkpoint3" type="Area3D" parent="." unique_id=793348826 groups=["Checkpoints", "Start and Finish Detectors"]]
 transform = Transform3D(-0.8750847, 0, 0.48396972, 0, 1, 0, -0.48396972, 0, -0.8750847, -213.90265, 0, -131.13132)
 collision_layer = 4
@@ -110,6 +142,14 @@ monitoring = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint3" unique_id=808157563]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.271637, 0, 0)
 shape = SubResource("BoxShape3D_kerva")
+
+[node name="CSGTorus3D5" type="CSGTorus3D" parent="Checkpoint3" unique_id=1826713864]
+transform = Transform3D(0.9995703, 0.026269406, -0.013033092, -0.011391145, -0.06171809, -0.9980287, -0.027021468, 0.99774855, -0.061392464, 1.1789093, -1.605, -0.22692108)
+use_collision = true
+collision_layer = 2
+inner_radius = 4.0
+outer_radius = 5.0
+sides = 32
 
 [node name="StartPoint" type="Marker3D" parent="." unique_id=531732849]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.46489, 0, -154.00258)

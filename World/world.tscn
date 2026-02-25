@@ -87,7 +87,6 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.019042969, 0.07989502, -0.0
 shape = SubResource("BoxShape3D_bkhv4")
 
 [node name="Track1" parent="TimeTrialStart" unique_id=1196417104 instance=ExtResource("4_3f78f")]
-visible = false
 
 [node name="TimeTrialStart2" parent="." unique_id=1114075049 node_paths=PackedStringArray("track") instance=ExtResource("3_j8job")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.815323, 0, -32.796383)
@@ -133,29 +132,29 @@ alignment = 1
 
 [node name="Track1BestTime" type="Label" parent="HUD/VBoxContainer" unique_id=966440508 groups=["Track1BestTimeLabel"]]
 layout_mode = 2
-text = "Track 1 Best time: 9999.99"
+text = "Track 1 Best time: N/A"
 label_settings = SubResource("LabelSettings_k8do8")
 
 [node name="Track2BestTime" type="Label" parent="HUD/VBoxContainer" unique_id=1604883098 groups=["Track2BestTimeLabel"]]
 layout_mode = 2
-text = "Track 2 Best time:"
+text = "Track 2 Best time: N/A"
 label_settings = SubResource("LabelSettings_bkhv4")
 
 [node name="HealthLabel" type="Label" parent="HUD/VBoxContainer" unique_id=1934339005 groups=["Health Label"]]
 layout_mode = 2
-text = "Health: 90"
+text = "Health: 10"
 label_settings = SubResource("LabelSettings_yf0ba")
 
 [node name="CurrentTimeLabel" type="Label" parent="HUD" unique_id=660635940 groups=["CurrentTime"]]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Current Time: 0000"
+text = "Current Time: N/A"
 label_settings = SubResource("LabelSettings_eidgh")
 
 [node name="WorldObstacle" type="CSGBox3D" parent="." unique_id=383658853 groups=["Obstacles"]]
 transform = Transform3D(0.9571479, 0, -0.28959987, 0, 1, 0, 0.28959987, 0, 0.9571479, 18.776, 1.28, 42.82914)
-visible = false
 use_collision = true
 collision_layer = 2
 size = Vector3(10.408413, 3.0388184, 15.604616)
@@ -184,7 +183,6 @@ shape = SubResource("BoxShape3D_wusto")
 
 [node name="WorldObstacle3" type="CSGBox3D" parent="." unique_id=386466538 groups=["Obstacles"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.443888, 0.58058643, -8.544146)
-visible = false
 use_collision = true
 collision_layer = 2
 size = Vector3(2.5, 2.5, 2.5)

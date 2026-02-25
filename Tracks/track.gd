@@ -39,6 +39,7 @@ func _on_start_detector_body_entered(_body: Node3D) -> void:
 		for checkpoint in get_tree().get_nodes_in_group("Checkpoints"):
 			checkpoint.monitoring = true
 		timer.start()
+		current_time_label.visible = true
 
 
 func _on_timer_timeout() -> void:
@@ -69,6 +70,7 @@ func _on_finish_detector_body_entered(_body: Node3D) -> void:
 			else:
 				track2_best_label.text = "Track 2 Best time: " + str(round_to_dec(best_time,2))
 			
+			#current_time_label.visible = false
 			reset_checkpoints()
 
 

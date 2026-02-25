@@ -23,7 +23,7 @@ size = Vector3(1, 1, 4.207947)
 [sub_resource type="BoxMesh" id="BoxMesh_nuiww"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kerva"]
-size = Vector3(4.2006226, 1, 1)
+size = Vector3(4.2391205, 1, 1)
 
 [node name="Track1" type="Path3D" unique_id=1196417104]
 curve = SubResource("Curve3D_j8job")
@@ -75,6 +75,14 @@ shape = SubResource("BoxShape3D_5g37k")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FinishDetector" unique_id=1486598639]
 mesh = SubResource("BoxMesh_nuiww")
 
+[node name="MeshInstance3D5" type="CSGTorus3D" parent="FinishDetector" unique_id=546654546]
+transform = Transform3D(0.69152576, 0.960983, -1.2091031e-08, 1.0927845e-07, 1.6411124e-15, 1, 2.4024582, -0.27661055, -4.200592e-08, 0.61009216, 0.20947695, 0.6538372)
+use_collision = true
+collision_layer = 2
+inner_radius = 0.8
+sides = 32
+ring_sides = 14
+
 [node name="Checkpoint1" type="Area3D" parent="." unique_id=593801342 groups=["Checkpoints", "Start and Finish Detectors"]]
 transform = Transform3D(0.9996072, 0, 0.02802632, 0, 1, 0, -0.02802632, 0, 0.9996072, 28.765673, 0, 34.307243)
 collision_layer = 4
@@ -82,6 +90,14 @@ monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint1" unique_id=2075304324]
 shape = SubResource("BoxShape3D_kerva")
+
+[node name="MeshInstance3D" type="CSGTorus3D" parent="Checkpoint1" unique_id=712554570]
+transform = Transform3D(2.4999998, 0, -4.371139e-08, 1.0927846e-07, 1.9106853e-15, 1, 0, -0.9999999, 1.9106855e-15, 0, 0.21093512, 0)
+use_collision = true
+collision_layer = 2
+inner_radius = 0.8
+sides = 32
+ring_sides = 14
 
 [node name="Checkpoint3" type="Area3D" parent="." unique_id=2015984525 groups=["Checkpoints", "Start and Finish Detectors"]]
 transform = Transform3D(0.9550717, 0, -0.2963749, 0, 1, 0, 0.2963749, 0, 0.9550717, 27.262316, 0, 51.000504)
@@ -91,6 +107,14 @@ monitoring = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint3" unique_id=2021507924]
 shape = SubResource("BoxShape3D_kerva")
 
+[node name="MeshInstance3D2" type="CSGTorus3D" parent="Checkpoint3" unique_id=1446676977]
+transform = Transform3D(2.4999523, -0.006178558, -4.371056e-08, 1.0927846e-07, 2.7512486e-15, 1, -0.015445948, -0.9999808, 2.7007196e-10, -0.07450867, 0.21093512, -0.016170502)
+use_collision = true
+collision_layer = 2
+inner_radius = 0.8
+sides = 32
+ring_sides = 14
+
 [node name="Checkpoint4" type="Area3D" parent="." unique_id=1297797047 groups=["Checkpoints", "Start and Finish Detectors"]]
 transform = Transform3D(-0.38716155, 0, -0.9220118, 0, 1, 0, 0.9220118, 0, -0.38716155, 10.072569, 0, 52.787205)
 collision_layer = 4
@@ -99,13 +123,30 @@ monitoring = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint4" unique_id=1962505385]
 shape = SubResource("BoxShape3D_kerva")
 
+[node name="MeshInstance3D3" type="CSGTorus3D" parent="Checkpoint4" unique_id=2060351271]
+transform = Transform3D(2.4991372, 0.026281565, -4.3696314e-08, 1.0927846e-07, 2.7512486e-15, 1, 0.06570423, -0.9996545, -1.1488002e-09, -0.08168411, 0.21093512, -0.18778801)
+use_collision = true
+collision_layer = 2
+inner_radius = 0.8
+sides = 32
+ring_sides = 14
+
 [node name="Checkpoint2" type="Area3D" parent="." unique_id=941165851 groups=["Checkpoints", "Start and Finish Detectors"]]
 transform = Transform3D(0.80626905, 0, -0.5915489, 0, 1, 0, 0.5915489, 0, 0.80626905, 10.792387, 0, 36.018745)
 collision_layer = 4
 monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint2" unique_id=1027172610]
+transform = Transform3D(0.9958481, 0, -0.091032475, 0, 1, 0, 0.091032475, 0, 0.9958481, -0.11558914, 0, -0.004392624)
 shape = SubResource("BoxShape3D_kerva")
+
+[node name="MeshInstance3D4" type="CSGTorus3D" parent="Checkpoint2" unique_id=1583215273]
+transform = Transform3D(-2.497939, -0.040602595, 4.3675374e-08, 1.0927846e-07, -5.3112523e-16, 1, -0.10150719, 0.9991754, 1.7748025e-09, -0.091846466, 0.21093512, -0.0053520203)
+use_collision = true
+collision_layer = 2
+inner_radius = 0.8
+sides = 32
+ring_sides = 14
 
 [node name="StartPoint" type="Marker3D" parent="." unique_id=1180571150]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.834892, 0, 18.3351)
