@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://mdmnploja1ju" path="res://car/car.gd" id="1_2gitb"]
 [ext_resource type="PackedScene" uid="uid://c81d5vow81osm" path="res://assets/Red Car.glb" id="2_dxy33"]
+[ext_resource type="AudioStream" uid="uid://emparcrqt2ey" path="res://assets/acc_5500.wav" id="3_hkabp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2gitb"]
-size = Vector3(0.919989, 0.33539772, 1.6750679)
+size = Vector3(0.919989, 0.3890252, 1.6750679)
 
 [node name="Car" type="VehicleBody3D" unique_id=16548500]
 collision_mask = 14
@@ -17,7 +18,7 @@ braking_force = 150
 max_steer = 0.25
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=43761562]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0059283376, 0.16193938, 0.026885599)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0059283376, 0.18875313, 0.026885599)
 shape = SubResource("BoxShape3D_2gitb")
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="." unique_id=1776042558]
@@ -67,5 +68,8 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0
 
 [node name="Body_Cube_001" parent="Red Car" index="0" unique_id=1523488342]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.038663864, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2097565942]
+stream = ExtResource("3_hkabp")
 
 [editable path="Red Car"]
