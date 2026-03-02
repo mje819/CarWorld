@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b08f1s0e2uype"]
+
+[ext_resource type="Script" uid="uid://b30hhju6usgmc" path="res://HUD/hud.gd" id="1_h61sl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k8do8"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_bkhv4"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf0ba"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_eidgh"]
+font_size = 32
+
+[node name="HUD" type="MarginContainer" unique_id=1674871388 groups=["HUD"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource("1_h61sl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1282493977]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Track1BestTime" type="Label" parent="VBoxContainer" unique_id=810032810 groups=["Track1BestTimeLabel"]]
+layout_mode = 2
+text = "Track 1 Best time: N/A"
+label_settings = SubResource("LabelSettings_k8do8")
+
+[node name="Track2BestTime" type="Label" parent="VBoxContainer" unique_id=1264713498 groups=["Track2BestTimeLabel"]]
+layout_mode = 2
+text = "Track 2 Best time: N/A"
+label_settings = SubResource("LabelSettings_bkhv4")
+
+[node name="HealthLabel" type="Label" parent="VBoxContainer" unique_id=1427144787 groups=["Health Label"]]
+layout_mode = 2
+text = "Health: 10"
+label_settings = SubResource("LabelSettings_yf0ba")
+
+[node name="CurrentTimeLabel" type="Label" parent="." unique_id=395200419 groups=["CurrentTime"]]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Current Time: N/A"
+label_settings = SubResource("LabelSettings_eidgh")

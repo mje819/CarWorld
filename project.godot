@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CarWorld"
-run/main_scene="uid://bgvt3t4t4fprf"
+run/main_scene="uid://djvupuakcr7lv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

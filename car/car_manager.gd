@@ -1,6 +1,8 @@
 extends Node
 
-var health_label 
+var health_label
+
+signal hurt_car
 
 var engine_power : int:
 	set(new_engine_power):
@@ -8,6 +10,7 @@ var engine_power : int:
 			new_engine_power = 0
 		engine_power = new_engine_power
 		print("power: " + str(engine_power))
+
 @export var max_power := 150
 @export var max_health := 10
 var health : int :
@@ -15,7 +18,7 @@ var health : int :
 		health = new_health
 		print(health)
 		#label changes?
-		health_label.text = "Health: " + str(health)
+		
 
 func _ready() -> void:
 	health_label = get_tree().get_first_node_in_group("Health Label")
@@ -33,4 +36,6 @@ func _process(_delta: float) -> void:
 func take_damage() -> void:
 	health -= 1
 	engine_power -= 15
+	#health_label.text = "Health: " + str(health)
+	hurt_car.emit(health)
 	
