@@ -5,8 +5,8 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62w18"]
 albedo_color = Color(0.2970001, 0.26, 1, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wusto"]
-size = Vector3(2.5, 2.5, 2.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_lo5ox"]
+size = Vector3(0.50738525, 4.8896484, 0.57873535)
 
 [node name="WorldObstacle" type="CSGBox3D" unique_id=383658853 groups=["Obstacles"]]
 use_collision = true
@@ -19,6 +19,6 @@ script = ExtResource("1_wusto")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=513994468]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007271886, 0.011734962, -0.00022363663)
-shape = SubResource("BoxShape3D_wusto")
+shape = SubResource("BoxShape3D_lo5ox")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

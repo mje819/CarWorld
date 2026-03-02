@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cj7ue6i7pj2fb" path="res://Tracks/track2.tscn" id="5_k8do8"]
 [ext_resource type="Script" uid="uid://b30hhju6usgmc" path="res://HUD/hud.gd" id="6_bkhv4"]
 [ext_resource type="Script" uid="uid://n5ydgodyn863" path="res://World/world_obstacle.gd" id="6_yf0ba"]
+[ext_resource type="PackedScene" uid="uid://byluxv67dcwcr" path="res://assets/Tree.glb" id="8_eidgh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a836"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -70,6 +71,9 @@ font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_eidgh"]
 font_size = 32
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lo5ox"]
+size = Vector3(0.50738525, 4.8896484, 0.57873535)
 
 [node name="World" type="Node3D" unique_id=2090731207]
 script = ExtResource("1_yf0ba")
@@ -322,6 +326,534 @@ size_flags_vertical = 0
 text = "Current Time: N/A"
 label_settings = SubResource("LabelSettings_eidgh")
 
+[node name="WorldObstacle12" type="CSGBox3D" parent="." unique_id=260641975 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.425842, -0.31042105, -16.284332)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle12" unique_id=1054775702]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle12/Area3D" unique_id=701999160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle12" unique_id=1462410990 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle22" type="CSGBox3D" parent="." unique_id=1115810390 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.82016, -0.31042486, 9.11232)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle22" unique_id=1076524519]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle22/Area3D" unique_id=739512988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle22" unique_id=516494793 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle23" type="CSGBox3D" parent="." unique_id=635803000 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.957352, -0.31042486, -11.565804)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle23" unique_id=451633158]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle23/Area3D" unique_id=257827559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle23" unique_id=1303929228 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle44" type="CSGBox3D" parent="." unique_id=1442683389 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.49166, -1.4368622, -48.490616)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle44" unique_id=264746547]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle44/Area3D" unique_id=1985582398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle44" unique_id=1811689422 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle24" type="CSGBox3D" parent="." unique_id=1301566050 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.509148, -0.31042486, -42.058266)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle24" unique_id=1947747826]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle24/Area3D" unique_id=1509114556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle24" unique_id=1630579423 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle25" type="CSGBox3D" parent="." unique_id=805695225 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.44007, -0.31042486, -118.84789)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle25" unique_id=1099080711]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle25/Area3D" unique_id=1674639003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle25" unique_id=299641923 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle26" type="CSGBox3D" parent="." unique_id=996023290 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.17246, -0.31042486, -50.320625)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle26" unique_id=847103575]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle26/Area3D" unique_id=1891976286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle26" unique_id=618653826 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle27" type="CSGBox3D" parent="." unique_id=1024318209 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.40833, -0.31042486, -92.722244)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle27" unique_id=1993222862]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle27/Area3D" unique_id=1012278003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle27" unique_id=1708205077 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle28" type="CSGBox3D" parent="." unique_id=1168365894 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.580894, -0.31042486, -49.088863)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle28" unique_id=870087819]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle28/Area3D" unique_id=742036141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle28" unique_id=161064790 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle29" type="CSGBox3D" parent="." unique_id=1973005221 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.123276, -0.31042486, -27.47279)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle29" unique_id=1518066780]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle29/Area3D" unique_id=1857975944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle29" unique_id=1712844569 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle30" type="CSGBox3D" parent="." unique_id=2118845263 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.63414, -0.31042486, -64.2305)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle30" unique_id=61605056]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle30/Area3D" unique_id=1552351705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle30" unique_id=1146304311 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle31" type="CSGBox3D" parent="." unique_id=314990320 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.14212, -0.31042486, -80.56959)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle31" unique_id=912403715]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle31/Area3D" unique_id=1398961655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle31" unique_id=1311773184 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle32" type="CSGBox3D" parent="." unique_id=296743246 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.14212, -0.31042486, -156.56958)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle32" unique_id=1868124950]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle32/Area3D" unique_id=659054332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle32" unique_id=1880309819 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle33" type="CSGBox3D" parent="." unique_id=713610369 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.14212, -0.31042486, -98.56958)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle33" unique_id=373192524]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle33/Area3D" unique_id=1281350260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle33" unique_id=520340338 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle34" type="CSGBox3D" parent="." unique_id=242440532 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.14212, -0.31042486, -137.56958)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle34" unique_id=1310390667]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle34/Area3D" unique_id=2041091153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle34" unique_id=1876262636 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle35" type="CSGBox3D" parent="." unique_id=822492038 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.35487, -0.31042486, 77.42529)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle35" unique_id=2013526302]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle35/Area3D" unique_id=926628027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle35" unique_id=2086283290 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle36" type="CSGBox3D" parent="." unique_id=741359552 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.35487, -0.31042486, 99.42529)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle36" unique_id=476580283]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle36/Area3D" unique_id=1098820407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle36" unique_id=502279220 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle37" type="CSGBox3D" parent="." unique_id=635272144 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.35487, -0.31042486, 107.42529)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle37" unique_id=1387594104]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle37/Area3D" unique_id=1144098097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle37" unique_id=1494801989 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle38" type="CSGBox3D" parent="." unique_id=1552977925 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.354874, -0.31042486, 112.42529)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle38" unique_id=1942108982]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle38/Area3D" unique_id=90513422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle38" unique_id=518475804 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle39" type="CSGBox3D" parent="." unique_id=109234574 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.354874, -0.31042486, 59.425293)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle39" unique_id=187299836]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle39/Area3D" unique_id=10421043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle39" unique_id=200157521 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle40" type="CSGBox3D" parent="." unique_id=501157769 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.35487, -0.31042486, 55.425293)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle40" unique_id=565613985]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle40/Area3D" unique_id=1869911274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle40" unique_id=1586236117 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle41" type="CSGBox3D" parent="." unique_id=643963827 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.354874, -0.31042486, 82.42529)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle41" unique_id=1439866007]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle41/Area3D" unique_id=607262564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle41" unique_id=1525761372 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle42" type="CSGBox3D" parent="." unique_id=1864485420 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.35487, -0.31042486, 83.42529)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle42" unique_id=974630373]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle42/Area3D" unique_id=1611461662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle42" unique_id=1250869069 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle43" type="CSGBox3D" parent="." unique_id=1325507282 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.35487, -0.31042486, 83.42529)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.6, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle43" unique_id=692641323]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle43/Area3D" unique_id=1901805245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.040634155)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle43" unique_id=163134783 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle13" type="CSGBox3D" parent="." unique_id=259255183 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.452606, -0.055389613, 28.812729)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.1, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle13" unique_id=1646045838]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle13/Area3D" unique_id=1949727064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.04219818)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle13" unique_id=2048295540 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle14" type="CSGBox3D" parent="." unique_id=1699306410 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.34906, -0.01593563, 23.15242)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.01, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle14" unique_id=193285808]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle14/Area3D" unique_id=950883707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.027126312)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle14" unique_id=835204551 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle15" type="CSGBox3D" parent="." unique_id=217282279 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.65094, -0.51019555, -45.84758)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 1, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle15" unique_id=615257886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3310547)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle15/Area3D" unique_id=1265221871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, -0.2808609)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle15" unique_id=477552041 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle16" type="CSGBox3D" parent="." unique_id=812773993 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.65094, -0.13207771, 7.15242)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.25, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle16" unique_id=2125660895]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle16/Area3D" unique_id=1315710979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.042203903)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle16" unique_id=1913705543 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle17" type="CSGBox3D" parent="." unique_id=30427076 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.39685, -0.055642404, 15.272305)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.1, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle17" unique_id=730056540]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle17/Area3D" unique_id=1294952084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.03750038)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle17" unique_id=1522595678 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle18" type="CSGBox3D" parent="." unique_id=267374576 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.52635, -0.05795891, 6.422287)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.1, 0.03)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle18" unique_id=728934228]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle18/Area3D" unique_id=13014964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.024755478)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle18" unique_id=149072413 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle19" type="CSGBox3D" parent="." unique_id=1535839126 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.634384, -0.056205817, -18.890762)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.1, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle19" unique_id=170361087]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle19/Area3D" unique_id=1956494708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.06767082)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle19" unique_id=784393446 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle20" type="CSGBox3D" parent="." unique_id=1987853712 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.547348, -0.061370134, -47.07144)
+use_collision = true
+collision_layer = 2
+size = Vector3(0.1, 0.1, 0.1)
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle20" unique_id=371053059]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle20/Area3D" unique_id=1649607197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.050304413)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle20" unique_id=668386840 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
+[node name="WorldObstacle21" type="CSGBox3D" parent="." unique_id=1850937241 groups=["Obstacles"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.720566, -0.5674362, -26.703018)
+use_collision = true
+collision_layer = 2
+script = ExtResource("6_yf0ba")
+
+[node name="Area3D" type="Area3D" parent="WorldObstacle21" unique_id=764398801]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObstacle21/Area3D" unique_id=2091247282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25212097, 1.2065592, 0.028791428)
+shape = SubResource("BoxShape3D_lo5ox")
+
+[node name="Tree" parent="WorldObstacle21" unique_id=138998907 instance=ExtResource("8_eidgh")]
+transform = Transform3D(1.3654764, 0, 0, 0, 2.885353, 0, 0, 0, 1.6572421, 0, 3.0428784, 0)
+
 [connection signal="body_entered" from="WorldObstacle/Area3D" to="WorldObstacle" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="WorldObstacle2/Area3D" to="WorldObstacle2" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="WorldObstacle3/Area3D" to="WorldObstacle3" method="_on_area_3d_body_entered"]
@@ -333,6 +865,39 @@ label_settings = SubResource("LabelSettings_eidgh")
 [connection signal="body_entered" from="WorldObstacle5/Area3D" to="WorldObstacle5" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="WorldObstacle6/Area3D" to="WorldObstacle6" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="WorldObstacle7/Area3D" to="WorldObstacle7" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle12/Area3D" to="WorldObstacle12" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle22/Area3D" to="WorldObstacle22" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle23/Area3D" to="WorldObstacle23" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle44/Area3D" to="WorldObstacle44" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle24/Area3D" to="WorldObstacle24" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle25/Area3D" to="WorldObstacle25" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle26/Area3D" to="WorldObstacle26" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle27/Area3D" to="WorldObstacle27" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle28/Area3D" to="WorldObstacle28" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle29/Area3D" to="WorldObstacle29" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle30/Area3D" to="WorldObstacle30" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle31/Area3D" to="WorldObstacle31" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle32/Area3D" to="WorldObstacle32" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle33/Area3D" to="WorldObstacle33" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle34/Area3D" to="WorldObstacle34" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle35/Area3D" to="WorldObstacle35" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle36/Area3D" to="WorldObstacle36" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle37/Area3D" to="WorldObstacle37" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle38/Area3D" to="WorldObstacle38" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle39/Area3D" to="WorldObstacle39" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle40/Area3D" to="WorldObstacle40" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle41/Area3D" to="WorldObstacle41" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle42/Area3D" to="WorldObstacle42" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle43/Area3D" to="WorldObstacle43" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle13/Area3D" to="WorldObstacle13" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle14/Area3D" to="WorldObstacle14" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle15/Area3D" to="WorldObstacle15" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle16/Area3D" to="WorldObstacle16" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle17/Area3D" to="WorldObstacle17" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle18/Area3D" to="WorldObstacle18" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle19/Area3D" to="WorldObstacle19" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle20/Area3D" to="WorldObstacle20" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WorldObstacle21/Area3D" to="WorldObstacle21" method="_on_area_3d_body_entered"]
 
 [editable path="TimeTrialStart"]
 [editable path="TimeTrialStart2"]
