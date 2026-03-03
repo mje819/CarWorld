@@ -27,15 +27,16 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	# Maybe only for testing
-	#if Input.is_action_just_pressed("reset"):
+	if Input.is_action_just_pressed("reset"):
 		#health = max_health
 		#engine_power = max_power
-		#get_tree().reload_current_scene()
-	pass
+		get_tree().reload_current_scene()
+	#pass
 	
 func take_damage() -> void:
 	health -= 1
 	engine_power -= 15
 	#health_label.text = "Health: " + str(health)
 	hurt_car.emit(health)
-	
+	if health == 0:
+		get_tree().change_scene_to_file("res://LoseScreen/lose_screen.tscn")

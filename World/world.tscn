@@ -106,6 +106,7 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.019042969, 0.07989502, -0.0
 shape = SubResource("BoxShape3D_bkhv4")
 
 [node name="Track1" parent="TimeTrialStart" unique_id=1196417104 instance=ExtResource("4_3f78f")]
+visible = false
 
 [node name="TimeTrialStart2" parent="." unique_id=1114075049 node_paths=PackedStringArray("track") instance=ExtResource("3_j8job")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.815323, 0, -32.796383)
@@ -116,6 +117,7 @@ track = NodePath("Track2")
 text = "TIME TRIAL 2"
 
 [node name="Track2" parent="TimeTrialStart2" unique_id=1927837917 instance=ExtResource("5_k8do8")]
+visible = false
 
 [node name="Ramp" type="CSGPolygon3D" parent="." unique_id=918745583]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.59, 0, 4.344)

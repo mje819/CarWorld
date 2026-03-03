@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bxib7jodssga"]
+
+[ext_resource type="Script" uid="uid://c6jrwbysweuqo" path="res://LoseScreen/lose_screen.gd" id="1_a0ge5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p4grc"]
+font_size = 128
+
+[node name="LoseScreen" type="Control" unique_id=1091497418]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a0ge5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=28837061]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6, 0.078431375, 0.078431375, 1)
+
+[node name="Label" type="Label" parent="." unique_id=43593120]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.5
+offset_top = -188.0
+offset_right = 301.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU DIED"
+label_settings = SubResource("LabelSettings_p4grc")
+
+[node name="ResetButton" type="Button" parent="." unique_id=1473528695]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = 52.0
+offset_right = 121.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "RESTART"
+
+[node name="QuitButton" type="Button" parent="." unique_id=1173186729]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.75
+offset_top = 197.0
+offset_right = 43.25
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "QUIT	"
+
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

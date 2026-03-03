@@ -11,7 +11,8 @@ class_name Car
 
 
 func _ready() -> void:
-	pass
+	CarManager.health     = CarManager.max_health 
+	CarManager.engine_power = CarManager.max_power
 
 func _physics_process(delta: float) -> void:
 	engine_force = -Input.get_axis("accelerate","brake") * CarManager.engine_power
