@@ -114,6 +114,7 @@ top_level = true
 track = NodePath("Track2")
 
 [node name="Track2" parent="TimeTrialStart2" unique_id=1544083287 instance=ExtResource("5_k8do8")]
+is_track_1 = null
 
 [node name="Ramp" type="CSGPolygon3D" parent="." unique_id=918745583]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.59, 0, 4.344)

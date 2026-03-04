@@ -15,6 +15,8 @@ var checkpoint_4_passed := false
 
 @onready var start_point: Marker3D = $StartPoint
 
+var audio_player : AudioStreamPlayer
+
 var track1_best_label
 var track2_best_label
 @export var is_track_1 : bool
@@ -23,7 +25,7 @@ var current_time_label
 var time_elapsed : float = 0:
 	set(new_time):
 		time_elapsed = new_time
-		print(time_elapsed) # add ui updating
+		#print(time_elapsed) # add ui updating
 var best_time : float
 
 var all_checkpoints_passed := false
@@ -32,10 +34,12 @@ func _ready() -> void:
 	track1_best_label = get_tree().get_first_node_in_group("Track1BestTimeLabel")
 	track2_best_label = get_tree().get_first_node_in_group("Track2BestTimeLabel")
 	current_time_label = get_tree().get_first_node_in_group("CurrentTime")
+	audio_player = AudioManager.get_player()
 	
 func _on_start_detector_body_entered(_body: Node3D) -> void:
 	if visible:
-		print("start timer")
+		audio_player.play()
+		#print("start timer")
 		for checkpoint in get_tree().get_nodes_in_group("Checkpoints"):
 			checkpoint.monitoring = true
 		timer.start()
@@ -52,8 +56,9 @@ func _on_finish_detector_body_entered(_body: Node3D) -> void:
 		all_checkpoints_passed = true
 
 	if all_checkpoints_passed:
+		audio_player.play()
 		if !timer.is_stopped():
-			print("finished")
+			#print("finished")
 			if best_time != 0:
 				if time_elapsed < best_time:
 					best_time = time_elapsed
@@ -64,7 +69,7 @@ func _on_finish_detector_body_entered(_body: Node3D) -> void:
 			timer.stop()
 			time_elapsed = 0
 			
-			print("Best: " + str(best_time))
+			#print("Best: " + str(best_time))
 			if is_track_1:
 				track1_best_label.text = "Track 1 Best time: " + str(round_to_dec(best_time,2))
 			else:
@@ -75,6 +80,7 @@ func _on_finish_detector_body_entered(_body: Node3D) -> void:
 
 func _on_checkpoint_1_body_entered(_body: Node3D) -> void:
 	checkpoint_1_passed = true
+	audio_player.play()
 
 
 func reset_checkpoints():
@@ -89,14 +95,16 @@ func reset_checkpoints():
 
 func _on_checkpoint_2_body_entered(_body: Node3D) -> void:
 	checkpoint_2_passed = true
-
+	audio_player.play()
 
 func _on_checkpoint_3_body_entered(_body: Node3D) -> void:
 	checkpoint_3_passed = true
+	audio_player.play()
 
 
 func _on_checkpoint_4_body_entered(_body: Node3D) -> void:
 	checkpoint_4_passed = true
+	audio_player.play()
 
 func round_to_dec(num, digit):
 	return round(num * pow(10.0, digit)) / pow(10.0, digit)

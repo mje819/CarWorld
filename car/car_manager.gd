@@ -9,14 +9,14 @@ var engine_power : int:
 		if new_engine_power < 0:
 			new_engine_power = 0
 		engine_power = new_engine_power
-		print("power: " + str(engine_power))
+		#print("power: " + str(engine_power))
 
 @export var max_power := 150
 @export var max_health := 10
 var health : int :
 	set(new_health):
 		health = new_health
-		print(health)
+		#print(health)
 		#label changes?
 		
 

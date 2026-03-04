@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://its61njcocsf"]
+
+[ext_resource type="Script" uid="uid://bwrjeh2pyb2a4" path="res://AudioPlayer/audio_manager.gd" id="1_agala"]
+[ext_resource type="AudioStream" uid="uid://d4josg5ci8yws" path="res://assets/correct.wav" id="1_clv5u"]
+
+[node name="AudioManager" type="Node" unique_id=758005907]
+script = ExtResource("1_agala")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2127511135]
+stream = ExtResource("1_clv5u")
+volume_db = 10.0

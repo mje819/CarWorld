@@ -9,7 +9,7 @@ func _ready() -> void:
 		start_point = track.start_point
 
 func _on_body_entered(_body: Node3D) -> void:
-	print("create track")
+	#print("create track")
 	#if !has_track:
 		#var new_track = track.instantiate()
 		#add_child(new_track)
