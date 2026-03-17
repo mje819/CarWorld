@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 CarManager="*uid://m84eolvwtmvf"
 AudioManager="*uid://its61njcocsf"
 
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 Obstacles=""
